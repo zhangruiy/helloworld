@@ -1,0 +1,168 @@
+#include<windows.h>
+#include<stdio.h>
+#include<math.h>
+int Rig=0,Wro=0;
+void Add()
+{
+ int num0,num1,num;
+ num0=rand()%100;
+ num1=rand()%100;
+ printf("请回答：\n\t\t %d + %d = ",num0,num1);
+ scanf("%d",&num);
+ if(num0+num1==num)
+ {
+  printf("回答正确!\n");
+  Rig++;
+ }
+ else
+ {
+  printf("回答错误!\n");
+  Wro++;
+ }
+}
+void Sub()
+{
+ int num0,num1,num;
+ num0=rand()%100;
+ num1=rand()%100;
+ printf("请回答：\n\t\t %d - %d = ",num0,num1);
+ scanf("%d",&num);
+ if(num0-num1==num)
+ {
+  printf("回答正确!\n");
+  Rig++;
+ }
+ else
+ {
+  printf("回答错误!\n");
+  Wro++;
+ }
+}
+void Mul()
+{
+ int num0,num1,num;
+ num0=rand()%100;
+ num1=rand()%100;
+ printf("请回答：\n\t\t %d * %d = ",num0,num1);
+ scanf("%d",&num);
+ if(num*num==num)
+ {
+  printf("回答正确!\n");
+  Rig++;
+ }
+ else
+ {
+  printf("回答错误!\n");
+  Wro++;
+ }
+}
+void Div()
+{
+ int num0,num1,num;
+ num0=rand()%100;
+ num1=rand()%100;
+ printf("请回答：\n\t\t %d / %d = ",num0,num1);
+ scanf("%d",&num);
+ if(num0/num1==num)
+ {
+  printf("答案正确!\n");
+  Rig++;
+ }
+ else
+ {
+  printf("答案错误!\n");
+  Wro++;
+ }
+}
+void All()
+{
+ int num0,num1,num2,num;
+ num0=rand()%100;
+ num1=rand()%100;
+ num2=rand()%100;
+ printf("请回答：\n\t\t\ %d + %d - %d = ",num0,num1,num2);
+ scanf("%d",&num);
+ if(num0+num1-num2==num)
+ {
+  printf("回答正确!\n");
+  Rig++;
+ }
+ else
+ {
+  printf("回答错误!\n");
+  Wro++;
+ }
+}
+void Alla()
+{
+ int num0,num1,num2,num;
+ num0=rand()%100;
+ num1=rand()%100;
+ num2=rand()%100;
+ printf("请回答：\n\t\t\ %d * %d / %d = ",num0,num1,num2);
+ scanf("%d",&num);
+ if(num0*num1/num2==num)
+ {
+  printf("回答正确!\n");
+  Rig++;
+ }
+ else
+ {
+  printf("回答错误!\n");
+  Wro++;
+ }
+}
+int main()
+{
+ int cho,pri=0;
+ printf("\n\t\t小学简易四则运算如下：\n\n");
+ while(1)
+ {
+  printf("请选择：\n");
+  printf("\t\t  加法（请输入1）\n");
+  printf("\t\t  减法（请输入2）\n");
+  printf("\t\t  乘法（请输入3）\n");
+  printf("\t\t  除法（请输入4）\n");
+  printf("\t\t  加减（请输入5) \n");
+  printf("\t\t  乘除（请输入6) \n");
+  printf("\t\t  Exit（请输入7）\n");
+  if(pri==0)
+   scanf("%d",&cho);
+  switch(cho)
+  {
+  case 1:
+   Add();
+   break;
+  case 2:
+   Sub();
+   break;
+  case 3:
+   Mul();
+   break;
+  case 4:
+   Div();
+   break;
+  case 5:
+   All();
+    break;
+  case 6:
+    Alla();
+    break;
+  case 7:
+   return 0;
+  }
+  printf("\n\t\t\t继续运算（请输入1）\n");
+  printf("\n\t\t\t重新选择（请输入2）\n");
+  printf("\n\t\t\t退出运算（请输入3）\n");
+  scanf("%d",&pri);
+  if(pri==1)
+   pri=1;
+  else if(pri==2)
+   pri=0;
+  else if(pri==3)
+   break;
+  else
+   printf("输入指令有误，请重新输入!\n");
+ }
+ printf("完成了 %d 道题\n正确 %d 道\n错误 %d 道\n",Rig+Wro,Rig,Wro);
+}
